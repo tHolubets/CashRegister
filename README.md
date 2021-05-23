@@ -8,7 +8,7 @@ The program implements 3 user roles: goods expert, cashier and senior cashier.
 
 - Cashier can create new order(check), add positions to it and close the check.
 
-- Senior cashier can remove some position from the check or cancel it completely. Also user with this role can get a report about today orders.
+- Senior cashier can remove some position from the check or cancel it completely. Also user with this role can get a report about current day orders.
 
 The data is stored in the MySQL database. You could see the scheme of the database in the following picture:
 
