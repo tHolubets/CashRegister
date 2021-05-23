@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration debug="true">
+
+    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="maxFileSize" value="10MB"/>
+        <param name="maxBackupIndex" value="2"/>
+        <param name="file" value="F:/JavaStudying/cashRegister/logs/logfile.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="fileAppender2" class="org.apache.log4j.RollingFileAppender">
+        <param name="maxFileSize" value="10MB"/>
+        <param name="maxBackupIndex" value="2"/>
+        <param name="file" value="F:/JavaStudying/cashRegister/logs/logfileDebug.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <category name="com.studing.cashRegister">
+        <!--all, trace, debug, info, warn, error, fatal-->
+        <priority value="info"/>
+        <appender-ref ref="fileAppender"/>
+    </category>
+
+    <category name="com.studing.cashRegister.listeners" additivity="false">
+        <!--all, trace, debug, info, warn, error, fatal-->
+        <priority value="debug"/>
+        <appender-ref ref="fileAppender2"/>
+    </category>
+
+</log4j:configuration>

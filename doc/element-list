@@ -1,0 +1,9 @@
+com.studing.cashRegister.controller
+com.studing.cashRegister.dao
+com.studing.cashRegister.exceptions
+com.studing.cashRegister.filters
+com.studing.cashRegister.listeners
+com.studing.cashRegister.model
+com.studing.cashRegister.service
+com.studing.cashRegister.tags
+com.studing.cashRegister.util
