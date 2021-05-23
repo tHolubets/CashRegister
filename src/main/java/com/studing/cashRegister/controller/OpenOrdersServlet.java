@@ -43,6 +43,7 @@ public class OpenOrdersServlet extends HttpServlet {
         } catch (MyException ex) {
             request.setAttribute("errorMessage", ex);
             request.getRequestDispatcher("error.jsp").forward(request, response);
+            return;
         }
         if(orders!=null){
             session.setAttribute("openOrders", orders);

@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
         } catch (MyException ex) {
             request.setAttribute("errorMessage", ex);
             request.getRequestDispatcher("error.jsp").forward(request, response);
+            return;
         }
         if (isLoginSuccessful) {
             logger.info("Successful login = {}", login);

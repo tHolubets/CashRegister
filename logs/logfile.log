@@ -130,3 +130,11 @@
 2021-05-23 16:40:00 INFO  LoginServlet - Successful login = scashier
 2021-05-23 16:40:56 INFO  LoginServlet - Successful login = scashier
 2021-05-23 16:41:16 INFO  LoginServlet - Successful login = expert
+2021-05-23 17:29:51 INFO  LoginServlet - Unsuccessful login = expert
+2021-05-23 17:29:56 INFO  LoginServlet - Successful login = expert
+2021-05-23 17:30:08 INFO  LoginServlet - Successful login = cashier
+2021-05-23 17:30:39 INFO  LoginServlet - Successful login = scashier
+2021-05-23 17:41:52 INFO  LoginServlet - Successful login = expert
+2021-05-23 17:42:07 ERROR GoodsDao - Saving goods SQL error
+2021-05-23 17:42:24 INFO  LoginServlet - Successful login = cashier
+2021-05-23 17:42:48 INFO  LoginServlet - Successful login = scashier

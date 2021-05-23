@@ -79,6 +79,7 @@ public class OrderServlet extends HttpServlet {
             } catch (MyException ex) {
                 session.setAttribute("errorMessage", ex);
                 response.sendRedirect("error.jsp");
+                return;
             }
             logger.debug("Creating new order({})", order.getId());
 

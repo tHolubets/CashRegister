@@ -43,6 +43,7 @@ public class GoodsServlet extends HttpServlet {
         } catch (MyException ex) {
             request.setAttribute("errorMessage", ex);
             request.getRequestDispatcher("error.jsp").forward(request, response);
+            return;
         }
         request.setAttribute("goods", goods);
         request.getRequestDispatcher("goods.jsp").forward(request, response);

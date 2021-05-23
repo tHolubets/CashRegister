@@ -41,6 +41,7 @@ public class XReportServlet extends HttpServlet {
         } catch (MyException ex) {
             request.setAttribute("errorMessage", ex);
             request.getRequestDispatcher("../error.jsp").forward(request, response);
+            return;
         }
         logger.debug("Create xReport reques");
 

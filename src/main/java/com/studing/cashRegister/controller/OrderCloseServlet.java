@@ -41,12 +41,14 @@ public class OrderCloseServlet extends HttpServlet {
         } catch (MyException ex) {
             session.setAttribute("errorMessage", ex);
             response.sendRedirect("../error.jsp");
+            return;
         }
         try {
             orderService.closeOrder(order);
         } catch (MyException ex) {
             session.setAttribute("errorMessage", ex);
             response.sendRedirect("../error.jsp");
+            return;
         }
         logger.debug("Close order({}) request", order.getId());
 

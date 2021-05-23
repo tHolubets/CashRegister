@@ -66,6 +66,7 @@ public class OrderEditServlet  extends HttpServlet {
         } catch (MyException ex) {
             request.getSession().setAttribute("errorMessage", ex);
             response.sendRedirect("../error.jsp");
+            return;
         }
         List<Integer> newQuantityList = new ArrayList<>();
         for (int i = 0; i < order.getGoodsList().size(); i++) {
@@ -76,6 +77,7 @@ public class OrderEditServlet  extends HttpServlet {
         } catch (MyException ex) {
             request.getSession().setAttribute("errorMessage", ex);
             response.sendRedirect("../error.jsp");
+            return;
         }
         logger.debug("Edit order({}) post request", order.getId());
 

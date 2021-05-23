@@ -46,6 +46,7 @@ public class OrderCancelServlet extends HttpServlet {
         } catch (MyException ex) {
             session.setAttribute("errorMessage", ex);
             response.sendRedirect("../openOrders");
+            return;
         }
         logger.debug("Cancel order({}) request", order.getId());
 

@@ -48,6 +48,7 @@ public class AddPositionServlet extends HttpServlet {
         } catch (MyException ex) {
             session.setAttribute("errorMessage", ex);
             response.sendRedirect("error.jsp");
+            return;
         }
         if(orderedGoods == null){
             session.setAttribute("addPositionError", "No such product was found");
