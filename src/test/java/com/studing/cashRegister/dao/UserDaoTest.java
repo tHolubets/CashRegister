@@ -3,6 +3,7 @@ package com.studing.cashRegister.dao;
 import com.studing.cashRegister.exceptions.MyException;
 import com.studing.cashRegister.model.User;
 import com.studing.cashRegister.model.UserRole;
+import com.studing.cashRegister.util.ConnectionPool;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -87,7 +88,7 @@ class UserDaoTest {
             if (generatedKeys.next()) {
                 firstId = generatedKeys.getLong(1);
             } else {
-                throw new SQLException("Creating order failed, no ID obtained.");
+                throw new SQLException("Creating users failed, no ID obtained.");
             }
             for (int i = 0; i < 3; i++) {
                 savedUsers.get(i).setId(firstId+i);
@@ -96,8 +97,8 @@ class UserDaoTest {
             throwables.printStackTrace();
             throw new MyException("Cannot save user data.", throwables);
         }finally {
-            close(statement1);
-            close(statement);
+            ConnectionPool.close(statement1);
+            ConnectionPool.close(statement);
         }
     }
 
@@ -110,7 +111,7 @@ class UserDaoTest {
         UserDao userDao1 = UserDao.getInstance();
         UserDao userDao2 = UserDao.getInstance();
         assertEquals(userDao1, userDao2);
-        assertSame(userDao2, userDao2);
+        assertSame(userDao1, userDao2);
     }
 
     @Test
